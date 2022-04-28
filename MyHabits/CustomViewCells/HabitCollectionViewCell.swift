@@ -17,10 +17,8 @@ class HabitCollectionViewCell: UICollectionViewCell {
     let titleLabel: UILabel = {
 
         let label = UILabel()
-        label.text = "Выпить стакан воды"
         label.numberOfLines = 2
         label.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
-        label.textColor = .blue
         label.translatesAutoresizingMaskIntoConstraints = false
 
         return label
@@ -87,6 +85,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
         }
         self.habit = habit
         titleLabel.text = habit.name
+        titleLabel.textColor = habit.color
         timeLabel.text = habit.dateString
         counterLabel.text = "Счётчик: \(habit.trackDates.count)"
         checkmarkButton.tintColor = habit.color
